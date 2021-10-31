@@ -6,15 +6,26 @@ function setup() {
   for(let i = 0; i < 8; i++){
   for(let j = 0; j < 8; j++){
       console.log(i,j);
-      rect(20*i,20*j,20,20);
-      if(i*j %2==0){
+
+      if((i+j) %2==0){
         noFill()
       }
     else{
-        fill(51)
+        fill(128)
     }
-
+rect(size*i,size*j,size,size);
       // BLANK[1] (hint: rectのx座標は size * i, y座標はsize * j)
+
+        if((i+j)%2==1 && j<3){
+  fill(255,0,0);
+  noStroke();
+  ellipse(size*i+size/2,size*j+size/2,size*0.8);
+}
+ else if ((i+j)%2==1 && j>4) {
+  fill(0);
+  noStroke();
+  ellipse(size*i+size/2,size*j+size/2,size*0.8);
+      }
     }
   }
 }
